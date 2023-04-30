@@ -1,0 +1,18 @@
+.background {
+    /* height: 550px;
+    overflow-x: hidden;
+  overflow-y: auto; */
+  height: 510px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.call {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    height: 60px;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
