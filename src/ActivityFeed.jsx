@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { GeneralContext } from "./App.jsx";
 
+import { Grid, CircularProgress } from "@mui/material";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import PhoneForwardedIcon from "@mui/icons-material/PhoneForwarded";
@@ -10,14 +11,14 @@ import PhoneForwardedIcon from "@mui/icons-material/PhoneForwarded";
 import { months } from "./assets/months.js";
 import { baseURL } from "./App.jsx";
 
-
 const ActivityFeed = () => {
   const [calls, setCalls] = useState(null);
   const [callDetailsId, setCallDetailsId] = useState(null);
   const [isArchived, setIsArchived] = useState(null);
   const [formattedCalls, setFormattedCalls] = useState({});
   const [callExpanded, setCallExpanded] = useState(false);
-  const { callType, setCallType, callCount, setCallCount } = useContext(GeneralContext);
+  const { callType, setCallType, callCount, setCallCount } =
+    useContext(GeneralContext);
 
   useEffect(() => {
     getData();
@@ -138,7 +139,6 @@ const ActivityFeed = () => {
           })
           .catch((err) => console.log(err));
       }
-
     } else {
       axios
         .patch(`${baseURL}reset`, { is_archived: false })
@@ -154,7 +154,17 @@ const ActivityFeed = () => {
     }
   };
 
-  if (!calls) return null;
+  if (!calls)
+    return (
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        sx={{ width: "100%", height: "100%"}}
+      >
+        <CircularProgress />
+      </Grid>
+    );
   return (
     <div className="background">
       <div
