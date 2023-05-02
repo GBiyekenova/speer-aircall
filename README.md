@@ -1,9 +1,8 @@
 ## Summary
 
-## How to deploy the app
+## How to start the app
 ```
 npm install
-npm update react react-dom
 npm start
 ```
 
