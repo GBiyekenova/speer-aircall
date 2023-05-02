@@ -1,5 +1,12 @@
 ## Summary
 
+## How to deploy the app
+```
+npm install
+npm update react react-dom
+npm start
+```
+
 The goal of this test is to make you code a small ReactJS app. We have prepared a skeleton app for you, but please change whatever you want (CSS files, HTML structure, JS structure, etc).
 
 The app will have the following features:
@@ -65,5 +72,4 @@ The API is hosted on a free server, which is why the first time you call the API
 - **is_archived** - call is archived or not
 - **call_type** - can be a `missed`, `answered` or `voicemail` call.
 
-npm install
-npm update react react-dom
+
